@@ -1,0 +1,40 @@
+<div id="wrapper">
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Dashboard</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <ol class="breadcrumb">
+                    </ol>
+                </div>  
+                <div class="row">
+                  <div class="col-md-9">
+                    <ul id="conversations-list">
+                      <% @conversations.each do |conversation| %>
+                        <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+                      <% end %>
+                    </ul>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">User list</h3>
+                      </div>
+                      <div class="panel-body">
+                        <ul>
+                          <% @users.each do |user| %>
+                            <li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div id="wrapper">
+  <div id="page-wrapper">
+    <div class="container-fluid"> 
+      <p id="notice"><%= notice %></p>
+
+      <center><%= link_to 'Add Events', new_event_path, class: "btn btn-primary" %></center><br>
+      <table class="table product-overview">
+        <thead>
+          <tr>
+              <th>Index</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Activity</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @events.each do |event| %>
+            <tr>
+              <td><%= event.id %></td>
+              <td><%= event.name %></td>
+              <td><%= event.event_type %></td>
+              <td><%= Time.now.strftime("%m/%d/%Y") %> </td>
+              <td><%= link_to 'View Detail', event, class: "btn btn-primary" %>
+              <%= link_to 'Delete', event, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+    </div>
+  </div>
+</div>

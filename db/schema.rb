@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222130602) do
+ActiveRecord::Schema.define(version: 20180223115635) do
+
+  create_table "children", force: :cascade do |t|
+    t.string "name"
+    t.string "child_code"
+    t.string "gender"
+    t.string "image"
+    t.date "dob"
+    t.string "education"
+    t.string "school"
+    t.string "hobby"
+    t.string "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "event_type"
+    t.string "description"
+    t.string "image"
+    t.string "address"
+    t.string "organizer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.integer "user_id"
+    t.integer "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +73,16 @@ ActiveRecord::Schema.define(version: 20180222130602) do
     t.boolean "superadmin_role", default: false
     t.boolean "admin_role", default: false
     t.boolean "user_role", default: true
+    t.string "name"
+    t.string "no_of_children"
+    t.string "no_of_staff"
+    t.string "state"
+    t.string "established"
+    t.string "city"
+    t.string "area"
+    t.string "zip_code"
+    t.string "director"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

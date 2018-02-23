@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :children
+  resources :events
   get 'home/index'
 
   get 'dashboard/index'
@@ -9,4 +11,13 @@ Rails.application.routes.draw do
       passwords: 'users/passwords',
       registrations: 'users/registrations'
   	}
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+      resources :messages, only: [:create]
+  end
+  resources :chats
+  get 'home/profile'
+  get 'home/edit_profile'
 end

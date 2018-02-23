@@ -1,0 +1,53 @@
+<center>  
+      <h1><%= @child.name %> Details</h1>
+    <p id="notice"><%= notice %></p>
+    <div class= "row">
+      <div class= "col-md-6">
+        <%= image_tag @child.image.url, class: "pic" %>
+      </div>
+      <div class= "col-md-6", align= "left", style= "margin: -4px 250px 0px;">
+        <p>
+        <strong>Name:</strong>
+        <%= @child.name %>
+        </p>
+
+        <p>
+          <strong>Child code:</strong>
+          <%= @child.child_code %>
+        </p>
+
+        <p>
+          <strong>Gender:</strong>
+          <%= @child.gender %>
+        </p>
+
+        <p>
+          <strong>Dob:</strong>
+          <%= @child.dob %>
+        </p>
+
+        <p>
+          <strong>Education:</strong>
+          <%= @child.education %>
+        </p>
+
+        <p>
+          <strong>School:</strong>
+          <%= @child.school %>
+        </p>
+
+        <p>
+          <strong>Hobby:</strong>
+          <%= @child.hobby %>
+        </p>
+
+        <p>
+          <!-- <strong>Video:</strong> -->
+        <%#= video_tag @child.video.url %>
+        </p>
+
+        <%= link_to 'Edit', edit_child_path(@child), class: "btn btn-success" %> 
+        <%= link_to 'delete', @child, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+</center>

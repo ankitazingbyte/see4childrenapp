@@ -1,0 +1,63 @@
+<%= form_for @child do |form| %>
+    <% if child.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+        <ul>
+        <% child.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class= "col-md-6", align= "left", style= "margin: -4px 250px 0px;">
+    <div class="field">
+      <lable>Name:</lable><br>
+      <%= form.text_field :name, id: :child_name %>
+    </div>
+
+    <div class="field">
+      <lable>Child Code:</lable><br>
+      <%= form.text_field :child_code, id: :child_child_code %>
+    </div>
+
+    <div class="field">
+      <lable>Gender:</lable><br>
+      <%= form.text_field :gender, id: :child_gender %>
+    </div>
+
+    <div class="field">
+      <lable>Image:</lable><br>
+      <%= form.file_field :image, id: :child_image %>
+    </div>
+
+    <div class="field">
+     <lable>Date Of Birth:</lable><br>
+      <%= form.date_select :dob, id: :child_dob %>
+    </div>
+
+    <div class="field">
+      <lable>Education:</lable><br>
+      <%= form.text_field :education, id: :child_education %>
+    </div>
+
+    <div class="field">
+      <lable>School:</lable><br>
+      <%= form.text_field :school, id: :child_school %>
+    </div>
+
+    <div class="field">
+      <lable>Hobby:</lable><br>
+      <%= form.text_field :hobby, id: :child_hobby %>
+    </div>
+
+    <div class="field">
+      <lable>Video:</lable><br>
+      <%= form.file_field :video, id: :child_video %>
+    </div><br>
+
+    <div class="actions">
+      <%= form.submit "save",class: "btn btn-success" %>
+    </div>
+  </div>
+<% end %>
