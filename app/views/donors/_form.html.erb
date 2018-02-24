@@ -1,0 +1,62 @@
+<%= form_with(model: donor, local: true) do |form| %>
+  <% if donor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(donor.errors.count, "error") %> prohibited this donor from being saved:</h2>
+
+      <ul>
+      <% donor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :donor_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :child_code %>
+    <%= form.text_field :child_code, id: :donor_child_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :send_by %>
+    <%= form.text_field :send_by, id: :donor_send_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :donor_code %>
+    <%= form.text_field :donor_code, id: :donor_donor_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :donar_paid %>
+    <%= form.number_field :donar_paid, id: :donor_donar_paid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_paid %>
+    <%= form.text_field :last_paid, id: :donor_last_paid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_field :reference, id: :donor_reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.text_field :month, id: :donor_month %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

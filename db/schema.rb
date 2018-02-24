@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180223115635) do
+ActiveRecord::Schema.define(version: 20180224124034) do
+
+  create_table "certificates", force: :cascade do |t|
+    t.string "donar_name"
+    t.string "donation_amount"
+    t.string "sponsored_child_code"
+    t.string "sponsored_child_name"
+    t.string "month"
+    t.date "issue_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -36,6 +47,20 @@ ActiveRecord::Schema.define(version: 20180223115635) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
+  create_table "donors", force: :cascade do |t|
+    t.string "name"
+    t.string "child_code"
+    t.string "send_by"
+    t.string "donor_code"
+    t.integer "donar_paid"
+    t.string "last_paid"
+    t.string "reference"
+    t.string "month"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "event_type"
@@ -55,6 +80,23 @@ ActiveRecord::Schema.define(version: 20180223115635) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "no_of_children"
+    t.string "no_of_staff"
+    t.string "state"
+    t.string "established"
+    t.string "city"
+    t.string "area"
+    t.string "zip_code"
+    t.string "director"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

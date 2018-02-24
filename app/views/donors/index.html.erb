@@ -1,0 +1,32 @@
+<div id="wrapper">
+  <div id="page-wrapper">
+    <div class="container-fluid"> 
+      <p id="notice"><%= notice %></p>
+
+      <h1>List Of Donors</h1>
+
+      <table class="table product-overview">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Child code</th>
+            <th>Donor code</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @donors.each do |donor| %>
+            <tr>
+              <td><%= donor.id %></td>
+              <td><%= donor.child_code %></td>
+              <td><%= donor.donor_code %></td>
+              <td><%= link_to 'View Details', donor, class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+</div>

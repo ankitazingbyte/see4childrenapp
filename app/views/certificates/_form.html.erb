@@ -1,0 +1,53 @@
+<div id="wrapper">
+  <div id="page-wrapper">
+    <div class="container-fluid" align= "left">  
+      <%= form_for @certificate do |form| %>
+        <% if certificate.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(certificate.errors.count, "error") %> prohibited this certificate from being saved:</h2>
+
+            <ul>
+            <% certificate.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :donar_name %><br>
+          <%= form.text_field :donar_name, id: :certificate_donar_name %>
+        </div>
+
+        <div class="field">
+          <%= form.label :donation_amount %><br>
+          <%= form.text_field :donation_amount, id: :certificate_donation_amount %>
+        </div>
+
+        <div class="field">
+          <%= form.label :sponsored_child_code %><br>
+          <%= form.text_field :sponsored_child_code, id: :certificate_sponsored_child_code %>
+        </div>
+
+        <div class="field">
+          <%= form.label :sponsored_child_name %><br>
+          <%= form.text_field :sponsored_child_name, id: :certificate_sponsored_child_name %>
+        </div>
+
+        <div class="field">
+          <%= form.label :month %><br>
+          <%= form.text_field :month, id: :certificate_month %>
+        </div>
+
+        <div class="field">
+          <%= form.label :issue_date %><br>
+          <%= form.date_select :issue_date, id: :certificate_issue_date %>
+        </div><br>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
