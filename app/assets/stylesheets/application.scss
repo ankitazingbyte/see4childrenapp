@@ -20,7 +20,9 @@
  *= require style
  *= require default
  *= require toastr
+  = require font-awesome
  */
+ @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -83,9 +85,70 @@ ul {
 }
 
 #sidebar {
-  background-color: #afc396;
+  background-color: #cedcec;
 }
 
 #header {
-  background-color: #588790;
+  background-color: #3c3c3c;
+}
+
+.square {
+    width: 600px;
+    height: 400px;
+    padding: 50px;
+    margin: 30px;
+    border: 1px solid grey;
+}
+
+@media print {
+  body {
+    background-color: #FFF;
+  }
+
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  #line_items {
+    page-break-before: always;
+  }
+  
+  #pdf_link {
+    display: none;
+  }
+}
+/* RECTANGLE */
+.small-box{
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+    background: #00b3ff;
+  
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+}
+
+.inner{
+    position:  absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    color: white;
+  
+  div {
+     display: table;
+     width: 100%;
+     height: 100%;
+  }
+  
+  span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white
+  }
 }

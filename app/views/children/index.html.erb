@@ -1,45 +1,34 @@
-<div id="wrapper">
-  <div id="page-wrapper">
-    <div class="container-fluid">   
-      <p id="notice"><%= notice %></p>
-      <h1>Children</h1>
-      <table class= "table product-overview">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Child code</th>
-            <th>Gender</th>
-            <th>Image</th>
-            <th>Dob</th>
-            <th>Education</th>
-            <th>School</th>
-            <th>Hobby</th>
-            <th>Activity</th>
-            <!-- <th>Video</th> -->
-          </tr>
-        </thead>
+<p id="notice"><%= notice %></p>
+<h1>List Of Children</h1>
+<table class= "table product-overview">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Child code</th>
+      <th>Gender</th>
+      <th>Image</th>
+      <th>Activity</th>
+      <!-- <th>Video</th> -->
+    </tr>
+  </thead>
 
-        <tbody>
-          <% @children.each do |child| %>
-            <tr>
-              <td><%= child.name %></td>
-              <td><%= child.child_code %></td>
-              <td><%= child.gender %></td>
-              <td><%= image_tag child.image.url, class: "picture" %></td>
-              <td><%= child.dob %></td>
-              <td><%= child.education %></td>
-              <td><%= child.school %></td>
-              <td><%= child.hobby %></td>
-              <td><%= link_to 'Show', child, class: "btn btn-primary" %>
-                <%= link_to 'Destroy', child, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
-              <td><%#= child.video %></td>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <br>
-      <center><%= link_to 'New Child', new_child_path, class: "btn btn-primary" %></center>
-    </div>
-  </div>
-</div>
+  <tbody>
+    <% @children.each do |child| %>
+      <tr>
+        <td><%= child.id %></td>
+        <td><%= child.name %></td>
+        <td><%= child.child_code %></td>
+        <td><%= child.gender %></td>
+        <td><%= image_tag child.image.url, class: "picture" %></td>
+        <td><%= link_to 'Show', child, class: "btn btn-primary" %>
+          <%= link_to 'Destroy', child, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+        <td><%#= child.video %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<center><%= link_to 'Add Child', new_child_path, class: "btn btn-primary" %></center>
+    

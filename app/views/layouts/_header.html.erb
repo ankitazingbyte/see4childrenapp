@@ -5,9 +5,9 @@
 <div id="wrapper">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top m-b-0">
-        <div class="navbar-header" id= "header"><a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+        <div class="navbar-header" id= "header"><a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="material-icons"></i></a>
             <div class="top-left-part" id= "sidebar">
-                <div class="logo"><b><h3><font color="#c4ff6b">SEE4CHILDREN</font></h3></b>
+                <div class="logo"><b><h3><font color="#0c0c0c">SEE4CHILDREN</font></h3></b>
                 </div>
             </div>
             <ul class="nav navbar-top-links navbar-left hidden-xs">
@@ -32,7 +32,7 @@
                             <li>
                                 <div class="message-center">
                                     <a href="#">
-                                        <div class="user-img"> <!-- <img src="/images/users/pawandeep.jpg" alt="user" class="img-circle"> --> <!-- <span class="profile-status online pull-right"></span> 
+                                        <div class="user-img">  <img src="/images/users/pawandeep.jpg" alt="user" class="img-circle"> --> <!-- <span class="profile-status online pull-right"></span> 
                                         </div>
                                         <div class="mail-contnet">
                                             <h5>Pavan kumar</h5>
@@ -40,14 +40,14 @@
                                         </div>
                                     </a>
                                     <a href="#">
-                                        <div class="user-img"> <!-- <img src="/images/users/sonu.jpg" alt="user" class="img-circle"> --> <!-- <span class="profile-status busy pull-right"></span> </div>
+                                        <div class="user-img">  <img src="/images/users/sonu.jpg" alt="user" class="img-circle"> --> <!-- <span class="profile-status busy pull-right"></span> </div>
                                         <div class="mail-contnet">
                                             <h5>Sonu Nigam</h5>
                                             <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
                                         </div>
                                     </a>
                                     <a href="#">
-                                        <div class="user-img"> <!-- <img src="/images/users/arijit.jpg" alt="user" class="img-circle">  --><!-- <span class="profile-status away pull-right"></span> 
+                                        <div class="user-img">  <img src="/images/users/arijit.jpg" alt="user" class="img-circle">  --><!-- <span class="profile-status away pull-right"></span> 
                                         </div>
                                         <div class="mail-contnet">
                                             <h5>Arijit Sinh</h5>
@@ -108,7 +108,7 @@
             <div class="user-profile">
                 <div class="dropdown user-pro-body">
                     <div><%= image_tag "user.png", class: "img-circle" %></div>
-                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
                     <ul class="dropdown-menu animated flipInY">
                         <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                         <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
@@ -121,7 +121,7 @@
                                 <%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
                             <% else %>
                                 <%= link_to dashboard_index_path, class: 'login-button' do %>Go to App<% end %>
-                                <%= link_to destroy_user_session_path, method: :delete do%>Log Out<% end %>
+                                <%= link_to destroy_user_session_path, method: :delete do %>Log Out<% end %>
                             <% end %>
                         </li>
                     </ul>
@@ -136,31 +136,28 @@
                         <button class="btn btn-default" type="button"> <i class="fa fa-search"></i></button>
                         </span> 
                     </div>
-                    <!-- /input-group -->
                 </li>
-                <li>
-                 <!--    <div class="hide-menu t-earning">
-                        <div id="sparkline2dash" class="m-b-10"></div><small class="db">TOTAL EARNINGS - JUNE 2017</small>
-                        <h3 class="m-t-0 m-b-0">$2,478.00</h3>
-                    </div> -->
+                <li><%= link_to dashboard_index_path do %><i class="fa fa-folder-o" style="font-size:24px">Dashboard</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
                 </li>
-                <li><%= link_to "Dashboard", dashboard_index_path %></li>
-                <li><%= link_to "Profile", current_user %></li>
-                <li> <%= link_to "Events", events_path %></li>
-                <li><%= link_to "Chats", chats_path %></li>
-                <li><%= link_to "Children", children_path %></li>
-                <li><%= link_to "Donars", donors_path%></li>
+                <li><%= link_to current_user do %><i class="fa fa-id-card-o" style="font-size:24px">Profile</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                </li>
+                <li><%= link_to events_path do %><i class="fa fa-align-justify" style="font-size:24px">Events</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                </li>
+                <li><%= link_to chats_path do %><i class="fa fa-comments" style="font-size:24px">Chats</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                </li>
+                <li><%= link_to children_path do %><i class="fa fa-user-o" style="font-size:24px">Children</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                </li>
+                <li><%= link_to donors_path do %><i class="fa fa-user-circle" style="font-size:24px">Donars</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                </li>
                 <li><a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Notifications<span class="fa arrow"></span></span></a>
                 </li>
-                <li><a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Reports<span class="fa arrow"></span></span></a>
+                <li><%= link_to reports_path do %><i class="fa fa-user-circle" style="font-size:24px">Reports</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
                 </li>
-                <li><%= link_to "Certificates", certificates_path %>
+                <li><%= link_to certificates_path do %><i class="fa fa-user-circle" style="font-size:24px">Certificates</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
                 </li>
-                <li><a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Settings<span class="fa arrow"></span></span></a>
+                <li><a href="#" class="waves-effect"><i class="fa fa-gear" style="font-size:24px">Settings</i><span class="hide-menu"><span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level">
-                        <li><%= link_to "About Us"%></li>
-                        <li><%= link_to "Contact Us" %></li>
-                        <li><%= link_to "Term & Condition" %></li>
+                        <li><%= link_to "Change Password", home_change_password_path %></li>
                     </ul>
                 </li>
             </ul>

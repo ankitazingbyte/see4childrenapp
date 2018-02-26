@@ -1,16 +1,16 @@
 <%= form_for @child do |form| %>
-    <% if child.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
+  <% if child.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
 
-        <ul>
-        <% child.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <div class= "col-md-6", align= "left", style= "margin: -4px 250px 0px;">
+      <ul>
+      <% child.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class= "col-md-6", align= "left">
     <div class="field">
       <lable>Name:</lable><br>
       <%= form.text_field :name, id: :child_name %>

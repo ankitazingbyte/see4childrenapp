@@ -1,68 +1,68 @@
 <center> 
   <div id="container-fluid"> 
-    <h1><%= @user_profile.name %>'s Details</h1>
+    <h1><%#= @user_profile.name %>'s Details</h1>
     <p id="notice"><%= notice %></p>
-    <%= image_tag @user_profile.image.url,width: "1267px;" %>
+    <%#= image_tag @user_profile.image.url,width: "1267px;" %>
     <div class= "row" style="display:inline-block;">
       <div class= "col-md-6" align= "left"><br>
         <p>
           <strong>Name:</strong>
-          <%= @user_profile.name %>
+          <%#= @user_profile.name %>
         </p>
 
         <p>
           <strong>Email:</strong>
-          <%= @user.email %>
+          <%#= @user.email %>
         </p>
 
         <p>
           <strong>State:</strong>
-          <%= @user_profile.state %>
+          <%#= @user_profile.state %>
         </p>
 
         <p>
           <strong>City:</strong>
-          <%= @user_profile.city %>
+          <%#= @user_profile.city %>
         </p>
 
         <p>
           <strong>Zip code:</strong>
-          <%= @user_profile.zip_code %>
+          <%#= @user_profile.zip_code %>
         </p>
 
         <p>
           <strong>Director:</strong>
-          <%= @user_profile.director %>
+          <%#= @user_profile.director %>
         </p>
       </div>
       <div class= "col-md-6" align= "left"><br>
         <p>
           <strong>Director:</strong>
-          <%= @user_profile.director %>
+          <%#= @user_profile.director %>
         </p>
 
         <p>
           <strong>No of children:</strong>
-          <%= @user_profile.no_of_children %>
+          <%#= @user_profile.no_of_children %>
         </p>
 
         <p>
           <strong>No of staff:</strong>
-          <%= @user_profile.no_of_staff %>
+          <%#= @user_profile.no_of_staff %>
         </p>
 
 
         <p>
           <strong>Established:</strong>
-          <%= @user_profile.established %>
+          <%#= @user_profile.established %>
         </p>
 
         <p>
           <strong>Area:</strong>
-          <%= @user_profile.area %>
+          <%#= @user_profile.area %>
         </p>
       </div>
     </div><br>
-      <center><%= link_to 'Edit Profile', edit_profile_path(@user_profile), class: "btn btn-success" %></center>
+      <center><%#= link_to 'Edit Profile', edit_profile_path(@user_profile), class: "btn btn-success" %></center>
   </div>
 </center>

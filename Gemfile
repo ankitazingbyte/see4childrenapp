@@ -61,3 +61,5 @@ gem 'cancancan'
 gem 'carrierwave-video'
 gem "mini_magick"
 gem 'fog-aws'
+gem "pdfkit"
+gem "font-awesome-rails"

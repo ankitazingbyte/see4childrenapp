@@ -3,7 +3,6 @@ class HomeController < ApplicationController
 	
 	def index
 	end
-	def profile
-		 
+	def change_password		 
 	end
 end

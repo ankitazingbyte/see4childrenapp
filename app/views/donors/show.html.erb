@@ -1,39 +1,35 @@
-<div id="wrapper">
-  <div id="page-wrapper">
-    <div class="container-fluid">  
-      <p id="notice"><%= notice %></p>
-    <div class="row">
-      <div class= "col-md-4">
-        <p>
-          <%= image_tag @donor.image.url, width: "180px;" %>
-        </p>
-      </div>
-      <div class= "col-md-8" align= "left">
-        <p>
-          <strong>Name:</strong>
-          <%= @donor.name %>
-        </p>
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class= "col-md-4">
+    <p>
+      <%= image_tag @donor.image.url, width: "180px;" %>
+    </p>
+  </div>
+  <div class= "col-md-8" align= "left">
+    <p>
+      <strong>Name:</strong>
+      <%= @donor.name %>
+    </p>
 
-        <p>
-          <strong>Child code:</strong>
-          <%= @donor.child_code %>
-        </p>
+    <p>
+      <strong>Child code:</strong>
+      <%= @donor.child_code %>
+    </p>
 
-        <p>
-          <strong>Send by:</strong>
-          <%= @donor.send_by %>
-        </p>
-        
-        <p>
-          <strong>Donar paid:</strong>
-          <%= @donor.donar_paid %>
-        </p>
+    <p>
+      <strong>Send by:</strong>
+      <%= @donor.send_by %>
+    </p>
+    
+    <p>
+      <strong>Donar paid:</strong>
+      <%= @donor.donar_paid %>
+    </p>
 
-        <p>
-          <strong>Last paid:</strong>
-          <%= @donor.last_paid %>
-        </p>
-      </div>
-    </div>
- </div>
+    <p>
+      <strong>Last paid:</strong>
+      <%= @donor.last_paid %>
+    </p>
+  </div>
 </div>
+ 

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<h1>Reports</h1>
+<table class="table product-overview">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Child Name</th>
+      <th>Child Code</th>
+      <th>Donor ID</th>
+      <th>Activity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.id %></td>
+        <td><%= report.child_name %></td>
+        <td><%= report.child_code %></td>
+        <td><%= report.donor_id %></td>
+        <td><%= link_to 'View Details', report, class: "btn btn-primary" %>
+          <%= link_to 'Create Report' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    
