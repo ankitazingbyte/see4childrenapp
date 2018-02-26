@@ -57,9 +57,9 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'toastr-rails'
-gem 'cancancan'
 gem 'carrierwave-video'
 gem "mini_magick"
 gem 'fog-aws'
 gem "pdfkit"
 gem "font-awesome-rails"
+gem "rolify"

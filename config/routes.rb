@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :reports
   resources :certificates
   resources :donors
@@ -23,4 +24,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:create]
   end
   resources :chats
+  namespace :admin do
+    resources :reports
+  end
 end

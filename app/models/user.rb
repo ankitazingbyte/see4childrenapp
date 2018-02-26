@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
 	  #mount_uploader :image, ImageUploader
 
   # Include default devise modules. Others available are:
@@ -10,6 +11,5 @@ class User < ApplicationRecord
 	has_many :conversations, foreign_key: :sender_id
 	# after_create :create_profile
 	has_one :profile
-	belongs_to :report
 
 end
