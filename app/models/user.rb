@@ -11,12 +11,19 @@ class User < ApplicationRecord
 	has_many :conversations, foreign_key: :sender_id
 	# after_create :create_profile
 	has_one :profile
-	# def admin?
-	#   role.name == "admin"
-	# end
-
-	# def user?
-	#   role.name == "user"
-	# end
 	
+	# Get admin role 
+	def admin
+		return self.has_role? :admin
+	end
+	
+	# Get donor role 
+	def donor
+		return self.has_role? :donor
+	end
+	
+	# Get ngo role 
+	def ngo
+		return self.has_role? :ngo
+	end
 end

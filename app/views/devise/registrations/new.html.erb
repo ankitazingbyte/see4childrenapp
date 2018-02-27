@@ -21,9 +21,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+      <%= select_tag 'role', options_for_select( Role.all.reject{|u| u.name == "admin"}.collect{|u|[u.name]})%> 
+   </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/shared/links" %>
