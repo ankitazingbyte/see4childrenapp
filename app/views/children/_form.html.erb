@@ -56,6 +56,11 @@
       <%= form.file_field :video, id: :child_video %>
     </div><br>
 
+    <div class="field">
+      <lable>Ngos:</lable><br>
+      <%= form.select :admin_ngo_id, Admin::Ngo.all.map{|n| [n.name, n.id]}, class: "form-control" %>
+    </div><br>
+
     <div class="actions">
       <%= form.submit "save",class: "btn btn-success" %>
     </div>

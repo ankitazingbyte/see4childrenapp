@@ -108,7 +108,11 @@
             <div class="user-profile">
                 <div class="dropdown user-pro-body">
                     <div><%= image_tag "user.png", class: "img-circle" %></div>
-                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%#= current_user.email %><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <% if user_signed_in? %>
+                            <%= current_user.email %>
+                        <% end %>
+                        <span class="caret"></span></a>
                     <ul class="dropdown-menu animated flipInY">
                         <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                         <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
@@ -120,7 +124,7 @@
                             <% if current_user.nil? %>
                                 <%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
                             <% else %>
-                                <%= link_to dashboard_index_path, class: 'login-button' do %>Go to App<% end %>
+                                <%#= link_to dashboard_index_path, class: 'login-button' do %>Go to App<%# end %>
                                 <%= link_to destroy_user_session_path, method: :delete do %>Log Out<% end %>
                             <% end %>
                         </li>
@@ -137,28 +141,41 @@
                         </span> 
                     </div>
                 </li>
-                <li><%= link_to dashboard_index_path do %><i class="fa fa-folder-o" style="font-size:24px">Dashboard</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><%= link_to current_user do %><i class="fa fa-id-card-o" style="font-size:24px">Profile</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><%= link_to events_path do %><i class="fa fa-align-justify" style="font-size:24px">Events</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><%= link_to chats_path do %><i class="fa fa-comments" style="font-size:24px">Chats</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><%= link_to children_path do %><i class="fa fa-user-o" style="font-size:24px">Children</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><%= link_to donors_path do %><i class="fa fa-user-circle" style="font-size:24px">Donars</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Notifications<span class="fa arrow"></span></span></a>
-                </li>
-                <li><%= link_to reports_path do %><i class="fa fa-user-circle" style="font-size:24px">Reports</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
-                <li><%= link_to certificates_path do %><i class="fa fa-user-circle" style="font-size:24px">Certificates</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
-                </li>
+                <% if current_user.present? %>
+                <% unless current_user.has_role?(:admin) %>
+                    <li><%= link_to dashboard_index_path do %><i class="fa fa-folder-o" style="font-size:24px">Dashboard</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%#= link_to current_user do %><i class="fa fa-id-card-o" style="font-size:24px">Profile</i><%# end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to events_path do %><i class="fa fa-align-justify" style="font-size:24px">Events</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to chats_path do %><i class="fa fa-comments" style="font-size:24px">Chats</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to children_path do %><i class="fa fa-user-o" style="font-size:24px">Children</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to donors_path do %><i class="fa fa-user-circle" style="font-size:24px">Donars</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Notifications<span class="fa arrow"></span></span></a>
+                    </li>
+                    <li><%= link_to reports_path do %><i class="fa fa-user-circle" style="font-size:24px">Reports</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span></li>
+                    <li><%= link_to certificates_path do %><i class="fa fa-user-circle" style="font-size:24px">Certificates</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                <% else %>
+                    <li><%= link_to admin_dashboard_index_path do %><i class="fa fa-folder-o" style="font-size:24px">Dashboard</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to admin_ngos_path do %><i class="fa fa-comments" style="font-size:24px">Beneficiary</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to new_admin_report_path do %><i class="fa fa-user-circle" style="font-size:24px">Reports</i><% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                    <li><%= link_to chats_path do %><i class="fa fa-comments" style="font-size:24px">Chats</i>
+                    <% end %><span class="hide-menu"><span class="fa arrow"></span></span>
+                    </li>
+                <% end %>
+                <% end %>
                 <li><a href="#" class="waves-effect"><i class="fa fa-gear" style="font-size:24px">Settings</i><span class="hide-menu"><span class="fa arrow"></span></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><%= link_to "Change Password", home_change_password_path %></li>
-                    </ul>
+                <ul class="nav nav-second-level">
+                    <li><%= link_to "Change Password", home_change_password_path %></li>
+                </ul>
                 </li>
             </ul>
         </div>

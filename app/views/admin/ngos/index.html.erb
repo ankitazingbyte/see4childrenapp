@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Beneficiary List</h1>
+
+<table class="table product-overview">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Children</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_ngos.each do |admin_ngo| %>
+      <tr>
+        <td><%= admin_ngo.name %></td>
+        <td><%= admin_ngo.no_of_children %></td>
+        <td><%= admin_ngo.address %></td>
+        <td><%= link_to 'Vew Details', admin_ngo, class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add', new_admin_ngo_path, class: "btn btn-primary" %>

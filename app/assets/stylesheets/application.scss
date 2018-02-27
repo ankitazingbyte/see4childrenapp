@@ -120,10 +120,13 @@ ul {
     display: none;
   }
 }
-/* RECTANGLE */
-.small-box{
+
+/* RECTANGLE FOR DONOR*/
+.small-box1{
     position: relative;
     width: 70%;
+    width: 92%;
+    height: 110px;
     overflow: hidden;
     background: #00b3ff;
   
@@ -134,7 +137,78 @@ ul {
   }
 }
 
+.small-box2{
+    position: relative;
+    width: 70%;
+    width: 92%;
+    height: 110px;
+    overflow: hidden;
+    background: #fb722a96;
+  
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+}
+
 .inner{
+    position:  absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    color: white;
+  
+  div {
+     display: table;
+     width: 100%;
+     height: 100%;
+  }
+  
+  span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white
+  }
+}
+/* RECTANGLE FOR ADMIN */
+.box1{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #00b3ff;
+  
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+}
+
+.box2{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #e8e096;
+  
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+}
+.box3{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f98383;
+  
+  &:before{
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+}
+.inner-box{
     position:  absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     color: white;

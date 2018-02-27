@@ -1,5 +1,5 @@
 <center>  
-  <%= form_with(model: profile, local: true) do |f| %>
+  <%= form_for @profile do |f| %>
     <% if profile.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -20,8 +20,8 @@
         </div>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%#= f.label :email %><br />
+          <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">

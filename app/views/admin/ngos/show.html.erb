@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <%= image_tag @profile.image.url %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>No of children:</strong>
+  <%= @profile.no_of_children %>
+</p>
+
+<p>
+  <strong>No of staff:</strong>
+  <%= @profile.no_of_staff %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @profile.state %>
+</p>
+
+<p>
+  <strong>Established:</strong>
+  <%= @profile.established %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @profile.city %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @profile.area %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @profile.zip_code %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @profile.director %>
+</p>
+
+<h1>Event List</h1>
+<table class="table product-overview">
+  <thead>
+    <tr>
+        <th>Index</th>
+        <th>Event Name</th>
+        <th>Event Type</th>
+        <th>Event Date</th>
+        <th>Activity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.id %></td>
+        <td><%= event.name %></td>
+        <td><%= event.event_type %></td>
+        <td><%= Time.now.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to 'View Detail', event, class: "btn btn-primary" %>
+        <%= link_to 'Delete', event, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>List Of Children</h1>
+<table class= "table product-overview">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Child code</th>
+      <th>Gender</th>
+      <th>Image</th>
+      <th>Activity</th>
+      <!-- <th>Video</th> -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @children.each do |child| %>
+      <tr>
+        <td><%= child.id %></td>
+        <td><%= child.name %></td>
+        <td><%= child.child_code %></td>
+        <td><%= child.gender %></td>
+        <td><%= image_tag child.image.url, class: "picture" %></td>
+        <td><%= link_to 'Show', child, class: "btn btn-primary" %>
+          <%= link_to 'Destroy', child, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+        <td><%#= child.video %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
