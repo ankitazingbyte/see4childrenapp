@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @reports.each do |report| %>
+    <% @admin_reports.each do |admin_report| %>
       <tr>
-        <td><%= report.id %></td>
-        <td><%= report.child_name %></td>
-        <td><%= report.child_code %></td>
-        <td><%= report.donor_id %></td>
-        <td><%= link_to 'View Details', report, class: "btn btn-primary" %>
+        <td><%= admin_report.id %></td>
+        <td><%= admin_report.child_name %></td>
+        <td><%= admin_report.child_code %></td>
+        <td><%= admin_report.donor_id %></td>
+        <td><%= link_to 'View Details', admin_report, class: "btn btn-primary" %>
           <%= link_to 'Create Report' %>
         </td>
       </tr>

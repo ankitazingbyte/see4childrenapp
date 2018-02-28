@@ -28,4 +28,5 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     resources :reports
   end
+  resources :notifications
 end

@@ -63,3 +63,4 @@ gem 'fog-aws'
 gem "pdfkit"
 gem "font-awesome-rails"
 gem "rolify"
+gem "wkhtmltopdf-binary"

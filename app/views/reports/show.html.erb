@@ -5,33 +5,33 @@
     <table style="width:100%">
       <tr >
         <th padding="10px">Child name:</th>
-        <td><%= @report.child_name %></td>
+        <td><%= @admin_report.child_name %></td>
       </tr>
       <tr>
         <th>Child code:</th>
-        <td><%= @report.child_code %></td>
+        <td><%= @admin_report.child_code %></td>
       </tr>
       <tr>
         <th>Donor:</th>
-        <td><%= @report.donor_id %></td>
+        <td><%= @admin_report.donor_id %></td>
       </tr>
       <tr>
         <th>Donation month:</th>
-        <td><%= @report.donation_month %></td>
+        <td><%= @admin_report.donation_month %></td>
       </tr>
       <tr>
         <th>Date:</th>
-        <td><%= @report.date %></td>
+        <td><%= @admin_report.date %></td>
       </tr>
       <tr>
         <th>Paid:</th>
-        <td><%= @report.paid %></td>
+        <td><%= @admin_report.paid %></td>
       </tr>
       <tr>
         <th>Sent by:</th>
-        <td><%= @report.sent_by %></td>
+        <td><%= @admin_report.sent_by %></td>
       </tr>
     </table>
   </div>
-  <p id="pdf_link"><%= link_to "Download Invoice (PDF)",  report_path(@report, :format => "pdf") %></p>
+  <p id="pdf_link"><%= link_to "Download Invoice (PDF)",  admin_report_path(@admin_report, :format => "pdf") %></p>
 </center>

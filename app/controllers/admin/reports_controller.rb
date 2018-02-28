@@ -1,11 +1,11 @@
 class Admin::ReportsController < Admin::AdminController
 
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+ before_action :set_report, only: [:show, :edit, :update, :destroy]
 
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.all
+    @admin_reports = Admin::Report.all
   end
 
   # GET /reports/1
@@ -15,7 +15,7 @@ class Admin::ReportsController < Admin::AdminController
 
   # GET /reports/new
   def new
-    @report = Report.new
+    @admin_report = Admin::Report.new
   end
 
   # GET /reports/1/edit
@@ -25,15 +25,15 @@ class Admin::ReportsController < Admin::AdminController
   # POST /reports
   # POST /reports.json
   def create
-    @report = Report.new(report_params)
+    @admin_report = Admin::Report.new(admin_report_params)
 
     respond_to do |format|
-      if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @report }
+      if @admin_report.save
+        format.html { redirect_to @admin_report, notice: 'Report was successfully created.' }
+        format.json { render :show, status: :created, location: @admin_report }
       else
         format.html { render :new }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_report.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,12 +42,12 @@ class Admin::ReportsController < Admin::AdminController
   # PATCH/PUT /reports/1.json
   def update
     respond_to do |format|
-      if @report.update(report_params)
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
-        format.json { render :show, status: :ok, location: @report }
+      if @admin_report.update(admin_report_params)
+        format.html { redirect_to @admin_report, notice: 'Report was successfully updated.' }
+        format.json { render :show, status: :ok, location: @admin_report }
       else
         format.html { render :edit }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_report.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,9 +55,9 @@ class Admin::ReportsController < Admin::AdminController
   # DELETE /reports/1
   # DELETE /reports/1.json
   def destroy
-    @report.destroy
+    @admin_report.destroy
     respond_to do |format|
-      format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
+      format.html { redirect_to admin_reports_url, notice: 'Report was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,11 +65,11 @@ class Admin::ReportsController < Admin::AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_report
-      @report = Report.find(params[:id])
+      @admin_report = Admin::Report.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def report_params
-      params.require(:report).permit(:child_name, :child_code, :donor_id, :donation_month, :date, :paid, :sent_by)
+    def admin_report_params
+      params.require(:admin_report).permit(:child_name, :child_code, :donor_id, :donation_month, :date, :paid, :sent_by, :ngo_id)
     end
 end

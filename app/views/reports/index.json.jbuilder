@@ -1,1 +1,1 @@
-json.array! @reports, partial: 'reports/report', as: :report
+json.array! @admin_reports, partial: 'admin_reports/admin_report', as: :report
