@@ -2,18 +2,20 @@
 
 one:
   child_name: MyString
-  child_code: MyString
-  donor_id: 1
-  donation_month: MyString
-  date: 2018-02-26
-  paid: MyString
-  sent_by: MyString
+  ngo_name: MyString
+  child_age: 1
+  spend_money: MyString
+  month: MyString
+  date_of: MyString
+  issue: MyString
+  notification_id: 1
 
 two:
   child_name: MyString
-  child_code: MyString
-  donor_id: 1
-  donation_month: MyString
-  date: 2018-02-26
-  paid: MyString
-  sent_by: MyString
+  ngo_name: MyString
+  child_age: 1
+  spend_money: MyString
+  month: MyString
+  date_of: MyString
+  issue: MyString
+  notification_id: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228122509) do
+ActiveRecord::Schema.define(version: 20180228134123) do
 
   create_table "admin_ngos", force: :cascade do |t|
     t.string "name"
@@ -131,15 +131,15 @@ ActiveRecord::Schema.define(version: 20180228122509) do
 
   create_table "reports", force: :cascade do |t|
     t.string "child_name"
-    t.string "child_code"
-    t.integer "donor_id"
-    t.string "donation_month"
-    t.date "date"
-    t.string "paid"
-    t.string "sent_by"
+    t.string "ngo_name"
+    t.integer "child_age"
+    t.string "spend_money"
+    t.string "month"
+    t.string "date_of"
+    t.string "issue"
+    t.integer "notification_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "notification_id"
   end
 
   create_table "roles", force: :cascade do |t|
