@@ -18,9 +18,9 @@ class User < ApplicationRecord
 	end
 	
 	# Get donor role 
-	def donor
-		return self.has_role? :donor
-	end
+	# def donor
+	# 	return self.has_role? :donor
+	# end
 	
 	# Get ngo role 
 	def ngo

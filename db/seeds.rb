@@ -22,5 +22,5 @@ user1 = User.create(email: "admin@example.com", password: password,  password_co
 user1.add_role :admin
 user2 = User.create(email: "ngo@example.com", password: password, password_confirmation: password )
 user2.add_role :ngo
-user3 = User.create(email: "donor@example.com",  password: password, password_confirmation: password )
-user3.add_role :donor
+# user3 = User.create(email: "donor@example.com",  password: password, password_confirmation: password )
+# user3.add_role :donor
