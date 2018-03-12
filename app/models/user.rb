@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  rolify
+  rolify strict: true
 	  #mount_uploader :image, ImageUploader
 
   # Include default devise modules. Others available are:

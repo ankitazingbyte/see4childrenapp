@@ -30,6 +30,7 @@
 //= require dashboard1
 //= require jQuery.style.switcher
 //= require toastr
+//= require_tree .
 
 (function() {
   $(document).on('click', '.toggle-window', function(e) {

@@ -26,9 +26,9 @@
                 <% @users.each do |user| %>
                   <li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
                 <% end %>
-              <% else%>
-                <% @users.each do |user| %>
-                  <li><%= link_to user.admin, conversations_path(user_id: user), remote: true, method: :post %></li>
+              <% else %>
+                <% User.with_role(:admin).each do |user| %>
+                    <li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post%></li>
                 <% end %>
               <% end %>
             </ul>
