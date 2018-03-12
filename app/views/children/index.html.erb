@@ -20,7 +20,7 @@
         <td><%= child.name %></td>
         <td><%= child.child_code %></td>
         <td><%= child.gender %></td>
-        <td><%= image_tag child.image.url, class: "picture" %></td>
+        <td><%= image_tag child.image.url, class: "picture" unless child.image.blank? %></td>
         <td><%= link_to 'Show', child, class: "btn btn-primary" %>
           <%= link_to 'Destroy', child, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
         <td><%#= child.video %></td>

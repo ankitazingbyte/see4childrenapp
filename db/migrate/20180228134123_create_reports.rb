@@ -6,8 +6,7 @@ class CreateReports < ActiveRecord::Migration[5.1]
       t.integer :child_age
       t.string :spend_money
       t.string :month
-      t.string :date_of
-      t.string :issue
+      t.string :date_of_issue
       t.integer :notification_id
 
       t.timestamps

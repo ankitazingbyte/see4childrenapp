@@ -135,8 +135,7 @@ ActiveRecord::Schema.define(version: 20180228134123) do
     t.integer "child_age"
     t.string "spend_money"
     t.string "month"
-    t.string "date_of"
-    t.string "issue"
+    t.string "date_of_issue"
     t.integer "notification_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -164,6 +163,7 @@ ActiveRecord::Schema.define(version: 20180228134123) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -176,6 +176,9 @@ ActiveRecord::Schema.define(version: 20180228134123) do
     t.string "zip_code"
     t.string "director"
     t.string "image"
+    t.string "token"
+    t.string "password_digest"
+    t.string "password_salt"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

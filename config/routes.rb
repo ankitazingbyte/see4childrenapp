@@ -29,4 +29,24 @@ Rails.application.routes.draw do
     resources :reports
   end
   resources :notifications
+
+    namespace :api, defaults: { format: 'json' } do
+      namespace :v1 do
+        resources :sessions, only: :create
+        resources :registrations, only: :create
+        resources :ngos
+        resources :children
+        resources :events
+        resources :reports
+        devise_for :users
+        post 'password/forgot', to: 'password#forgot'
+        post 'password/reset', to: 'password#reset' 
+        put 'password/update', to: 'password#update'
+        resources :users, only: [:create, :update] do
+            collection do
+                post 'email_update'
+            end
+        end
+      end 
+    end
 end

@@ -10,5 +10,8 @@ class AddFieldsToUser < ActiveRecord::Migration[5.1]
     add_column :users, :zip_code, :string
     add_column :users, :director, :string
     add_column :users, :image, :string
+    add_column :users, :token, :string
+    add_column :users, :password_digest, :string
+    add_column :users, :password_salt, :string
   end
 end
