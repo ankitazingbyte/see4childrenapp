@@ -13,12 +13,12 @@
   </thead>
 
   <tbody>
-    <% @admin_ngos.each do |admin_ngo| %>
+    <% User.with_role(:ngo).each do |ngo| %>
       <tr>
-        <td><%= admin_ngo.name %></td>
-        <td><%= admin_ngo.no_of_children %></td>
-        <td><%= admin_ngo.address %></td>
-        <td><%= link_to 'Vew Details', admin_ngo, class: "btn btn-primary" %></td>
+        <td><%= ngo.email %></td>
+        <td><%#= ngo.no_of_children %></td>
+        <td><%#= ngo.address %></td>
+        <td><%#= link_to 'Vew Details', admin_ngo, class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

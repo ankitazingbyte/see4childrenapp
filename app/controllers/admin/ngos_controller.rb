@@ -1,4 +1,4 @@
-class Admin::NgosController < ApplicationController
+class Admin::NgosController < Admin::AdminController
   before_action :set_admin_ngo, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/ngos

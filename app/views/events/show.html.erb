@@ -2,31 +2,31 @@
 	<p id="notice"><%= notice %></p>
 	
 	<p>
-	  <%= image_tag @event.image.url, class: "image" %>
+	  <%= image_tag @event.image.url, class: "image" unless @event.image.blank? %>
 	</p>
 	<div align= "left">
-	<p>
-	  <b><h2><%= @event.name %>Event</h2></b>
-	</p>
+		<p>
+		  <b><h2><%= @event.name %>Event</h2></b>
+		</p>
 
-	<p>
-	  <strong>Event Type:</strong>
-	  <%= @event.event_type %>
-	</p>
+		<p>
+		  <strong>Event Type:</strong>
+		  <%= @event.event_type %>
+		</p>
 
-	<p>
-	  <strong>Date:</strong>
-	  <%= Time.now.strftime("%m/%d/%Y") %>
-	</p>
+		<p>
+		  <strong>Date:</strong>
+		  <%= Time.now.strftime("%m/%d/%Y") %>
+		</p>
 
-	<p>
-	  <strong>Venue:</strong>
-	  <%= @event.address %>
-	</p>
+		<p>
+		  <strong>Venue:</strong>
+		  <%= @event.address %>
+		</p>
 
-	<p>
-	  <strong>Description:</strong>
-	  <%= @event.description %>
-	</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @event.description %>
+		</p>
     </div>
 </center>

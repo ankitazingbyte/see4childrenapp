@@ -1,4 +1,4 @@
-class Api::V1::NgosController < Api::V1::ApplicationController
+class Api::V1::NgosController < Api::V1::ApiController
   before_action :set_ngo, only: [:show, :update, :destroy]
 
   # GET /ngos

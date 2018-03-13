@@ -1,4 +1,4 @@
-class DonorsController < ApplicationController
+class DonorsController < BaseController
   before_action :set_donor, only: [:show, :edit, :update, :destroy]
 
   # GET /donors

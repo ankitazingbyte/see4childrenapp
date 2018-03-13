@@ -1,4 +1,4 @@
-class CertificatesController < ApplicationController
+class CertificatesController < BaseController
   before_action :set_certificate, only: [:show, :edit, :update, :destroy]
 
   # GET /certificates

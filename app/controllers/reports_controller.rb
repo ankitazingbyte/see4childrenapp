@@ -1,4 +1,4 @@
-class ReportsController < ApplicationController
+class ReportsController < BaseController
   # GET /reports
   # GET /reports.json
   def index

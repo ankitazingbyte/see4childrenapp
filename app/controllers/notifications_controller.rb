@@ -1,4 +1,4 @@
-class NotificationsController < ApplicationController
+class NotificationsController < BaseController
 	def index
 		@admin_reports = Admin::Report.all
 	end

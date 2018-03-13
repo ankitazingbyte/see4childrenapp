@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class ProfilesController < BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -65,7 +65,7 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+      #@profile = Profile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

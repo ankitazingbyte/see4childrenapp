@@ -1,7 +1,6 @@
-class Api::V1::ReportsController < Api::V1::ApplicationController
+class Api::V1::ReportsController < Api::V1::ApiController
 	def index
 	    @reports = Report.all
-
 	    render json: @reports
     end
 

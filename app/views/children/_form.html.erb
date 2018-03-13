@@ -33,7 +33,7 @@
 
     <div class="field">
      <lable>Date Of Birth:</lable><br>
-      <%= form.date_select :dob, id: :child_dob %>
+      <%= form.date_select :dob,  {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {required: true} %>
     </div>
 
     <div class="field">

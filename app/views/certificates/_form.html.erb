@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :issue_date %><br>
-    <%= form.date_select :issue_date, id: :certificate_issue_date %>
+    <%= form.date_select :issue_date,  {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {required: true} %>
   </div><br>
 
   <div class="actions">

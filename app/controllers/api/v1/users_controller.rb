@@ -1,4 +1,4 @@
-class Api::V1::UsersController < Api::V1::ApplicationController	
+class Api::V1::UsersController < Api::V1::ApiController	
 	before_action :validate_email_update, only: :update
 	def update
 	    if current_user.update_new_email!(@new_email)
