@@ -20,6 +20,6 @@ class UsersController < BaseController
   	private
 
 	  def user_params
-	    params.required(:user).permit(:email,:password, :superadmin_role, :admin_role, :user_role, :name, :no_of_children, :no_of_staff, :state, :established, :city, :area, :zip_code, :direcor, :image)
+	    params.required(:user).permit(:email, :password, :superadmin_role, :admin_role, :user_role, :name, :no_of_children, :no_of_staff, :state, :established, :city, :area, :zip_code, :direcor, :image)
 	  end
 end

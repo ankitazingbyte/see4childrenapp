@@ -35,7 +35,7 @@ class Api::V1::UsersController < Api::V1::ApiController
       	end
 
 	    if User.email_used?(@new_email)
-	        return render json: { error: 'Email is already in use.'] }, status: :unprocessable_entity
+	        return render json: { error: 'Email is already in use.' }, status: :unprocessable_entity
 	    end
     end
 end
