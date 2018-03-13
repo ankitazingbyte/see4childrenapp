@@ -24,6 +24,11 @@
 #   <<: *default
 #   database: db/production.sqlite3
 
+<<<<<<< HEAD
+=======
+  # postgresql
+  
+>>>>>>> 3ec2853e46c14dd79bbfa8f47e08ce826e43f551
 default: &default
   adapter: postgresql
   # encoding: unicode
